@@ -75,20 +75,25 @@ e-d-c-b-a-b-c-d-e
 def print_rangoli(size):
     alphabets=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     output=alphabets[0]
+    #This line of code prints the middle most line.
     for i in range(size-1):
         output=alphabets[i+1] + '-' + output + '-' +alphabets[i+1]
     
-    
+    #Calculating the length of middle most line which will be used after words
     length=len(output)
+    
+    #Calculating and printing top most design 
     
     for i in range(size-1,0,-1):
         output2=alphabets[i]
         for j in range(i,size-1) :
             output2=alphabets[j+1] + '-' + output2 + '-' + alphabets[j+1]
         print(output2.center(length,'-')) 
-        
+    
+    #Printing the middle most design which was calculated earlier
     print(output)
     
+    #Calculating and printing bottom most design
     for i in range(1,size):
         output2=alphabets[i]
         for j in range(i,size-1) :
